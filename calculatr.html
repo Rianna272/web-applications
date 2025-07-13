@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+var num1=0
+var operator=""
+
+function addclick()
+{
+var textvalue=document.getElementById("txtnumbers").value
+document.getElementById("txtnumbers").value=""
+num1=parseFloat(textvalue)
+operator="+"
+}
+
+
+function subtractclick()
+{
+var textvalue=document.getElementById("txtnumbers").value
+document.getElementById("txtnumbers").value=""
+num1=parseFloat(textvalue)
+operator="-"
+}
+
+
+function multiplyclick()
+{
+var textvalue=document.getElementById("txtnumbers").value
+document.getElementById("txtnumbers").value=""
+num1=parseFloat(textvalue)
+operator="*"
+}
+
+
+function divideclick()
+{
+var textvalue=document.getElementById("txtnumbers").value
+document.getElementById("txtnumbers").value=""
+num1=parseFloat(textvalue)
+operator="/"
+}
+
+
+function equalclick()
+{
+var textvalue=document.getElementById("txtnumbers").value
+num2=parseInt(textvalue)
+if(operator=="+")
+answer=num1+num2 
+else if(operator=="-")
+answer=num1-num2
+else if(operator=="*")
+answer=num1*num2
+else if(operator=="/")
+answer=num1/num2
+document.getElementById("txtnumbers").value=""+answer
+operator="="
+}
+
+
+
+
+
+
+
+
+
+
+function btn1click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"1"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+
+function btn0click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"0"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+
+
+function btn2click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"2"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btn3click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"3"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btn4click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"4"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btn5click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"5"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btn6click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"6"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btn7click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"7"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btn8click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"8"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btn9click()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"9"
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btnDotclick()
+{
+var textvalue=document.getElementById("txtnumbers").value
+textvalue=textvalue+"."
+document.getElementById("txtnumbers").value=textvalue
+}
+
+
+function btnCclick()
+{
+
+document.getElementById("txtnumbers").value=""
+}
+
+
+
+
+
+
+
+
+</script>
+
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center
+        }
+        h1 {
+            color: green;
+            font-size: 20px
+        }
+        p {
+            text-align: center
+        }
+        .buttons {
+            height: 100px;
+            width: 100px;
+	background-color: lightgreen;
+        }
+
+#txtnumbers{height:100px; width:300px}
+
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <p>
+        <input type="text" id="txtnumbers"> 
+ <input class="buttons" type="button" value="C" onclick="btnCclick()"> 
+        <br>
+        <input class="buttons" type="button" value="1" onclick="btn1click()">
+        <input class="buttons" type="button" value="2" onclick="btn2click()">
+        <input class="buttons" type="button" value="3" onclick="btn3click()">
+        <input class="buttons" type="button" value="/" onclick="divideclick()">
+        <br>
+        <input class="buttons" type="button" value="4" onclick="btn4click()">
+        <input class="buttons" type="button" value="5" onclick="btn5click()">
+        <input class="buttons" type="button" value="6" onclick="btn6click()">
+        <input class="buttons" type="button" value="*" onclick="multiplyclick()"> 
+        <br>
+        <input class="buttons" type="button" value="7" onclick="btn7click()">
+        <input class="buttons" type="button" value="8" onclick="btn8click()">
+        <input class="buttons" type="button" value="9" onclick="btn9click()">
+        <input class="buttons" type="button" value="-" onclick="subtractclick()">
+
+        <br>
+        <input class="buttons" type="button" value="0" onclick="btn0click()">
+        <input class="buttons" type="button" value="." onclick="btnDotclick()"> 
+        <input class="buttons" type="button" value="=" onclick="equalclick()"> 
+        <input class="buttons" type="button" value="+" onclick="addclick()">
+
+    </p>
+</body>
+</html>
+
+
