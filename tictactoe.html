@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Smallest Number</title>
+<style>
+h1 {
+
+color:pink; font-size:15px;color: green}
+p{ 
+text-align:center;
+}
+
+.buttons{height:100px; width:100px}
+
+</style>
+<script>
+
+var turn = "X"
+function btn1click()
+{
+if (document.getElementById("btn1").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn1").value=turn 
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}
+
+
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+function btn2click()
+{
+if (document.getElementById("btn2").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn2").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+
+function btn3click()
+{
+if (document.getElementById("btn3").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn3").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+function btn4click()
+{
+if (document.getElementById("btn4").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn4").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}
+alert("the winner is"+turn)
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+
+function btn5click()
+{
+if (document.getElementById("btn5").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn5").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}
+alert("the winner is"+turn)
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+
+function btn6click()
+{
+if (document.getElementById("btn6").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn6").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}alert("the winner is"+turn)
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+
+function btn7click()
+{
+if (document.getElementById("btn7").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn7").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}alert("the winner is"+turn)
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+
+function btn8click()
+{
+if (document.getElementById("btn8").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn8").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}
+alert("the winner is"+turn)
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+
+function btn9click()
+{
+if (document.getElementById("btn9").value=="-" && checkWinner() == false)
+{
+document.getElementById("btn9").value=turn
+if(checkWinner()==true)
+{
+alert("the winner is"+turn)
+}
+if(checkDraw()==true)
+{
+alert("the game is a draw!")
+}alert("the winner is"+turn)
+
+if(turn == "X")
+turn="O"
+else
+turn="X"
+}}
+
+
+
+
+function checkWinner()
+{
+if(document.getElementById("btn1").value == turn && document.getElementById(
+"btn2").value == turn && document.getElementById("btn3").value == turn)
+{return true}
+
+
+
+else if(document.getElementById("btn4").value == turn && document.getElementById(
+"btn5").value == turn && document.getElementById("btn6").value == turn)
+{return true}
+
+
+
+else if(document.getElementById("btn7").value == turn && document.getElementById(
+"btn8").value == turn && document.getElementById("btn9").value == turn)
+{return true}
+
+
+
+
+else if(document.getElementById("btn1").value == turn && document.getElementById(
+"btn4").value == turn && document.getElementById("btn7").value == turn)
+{return true}
+
+
+
+else if(document.getElementById("btn2").value == turn && document.getElementById(
+"btn5").value == turn && document.getElementById("btn8").value == turn)
+{return true}
+
+
+
+else if(document.getElementById("btn3").value == turn && document.getElementById(
+"btn6").value == turn && document.getElementById("btn9").value == turn)
+{return true}
+
+
+
+else if(document.getElementById("btn1").value == turn && document.getElementById(
+"btn5").value == turn && document.getElementById("btn9").value == turn)
+{return true}
+
+
+
+else if(document.getElementById("btn3").value == turn && document.getElementById(
+"btn5").value == turn && document.getElementById("btn7").value == turn)
+{return true}
+
+else 
+{return false }}
+
+
+
+function checkDraw()
+{if(document.getElementById("btn1").value=="-" || document.getElementById("btn2").value=="-" ||document.getElementById("btn3").value=="-" ||document.getElementById("btn4").value=="-" ||document.getElementById("btn5").value=="-" ||document.getElementById("btn6").value=="-" ||document.getElementById("btn7").value=="-" ||document.getElementById("btn8").value=="-" ||document.getElementById("btn9").value=="-") 
+return false 
+else 
+return true  }
+
+
+
+
+
+
+
+
+
+
+}
+</script>
+</head>
+<body bgcolor="lightblue">
+
+<h1 align="center"> TIC TAC TOE </h1>
+<p>
+
+<input class="buttons" type="button"  value ="-" id="btn1" onclick="btn1click()">
+<input class="buttons" type="button"  value ="-" id="btn2" onclick="btn2click()">
+<input class="buttons" type="button"  value ="-" id="btn3" onclick="btn3click()">
+<br>
+<input class="buttons" type="button"  value ="-" id="btn4" onclick="btn4click()">
+<input class="buttons" type="button"  value ="-" id="btn5" onclick="btn5click()">
+<input class="buttons" type="button"  value ="-" id="btn6" onclick="btn6click()">
+<br>
+<input class="buttons" type="button"  value ="-" id="btn7" onclick="btn7click()">
+<input class="buttons" type="button"  value ="-" id="btn8" onclick="btn8click()">
+<input class="buttons" type="button"  value ="-" id="btn9" onclick="btn9click()">
+<br>
+<br>
+</p>
+</body>
+</html>
+
+
+
