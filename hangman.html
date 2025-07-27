@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hangman</title>
+</head>
+<body>
+
+<h1 id="hangmanTitle" style="text-align: center;">Hangman</h1>
+
+<p id="emptyPara" style="text-align: center;"></p>
+
+<p style="text-align: center;">
+  <button onclick="checkAlphabet('A')">A</button>
+  <button onclick="checkAlphabet('B')">B</button>
+  <button onclick="checkAlphabet('C')">C</button>
+  <button onclick="checkAlphabet('D')">D</button>
+  <button onclick="checkAlphabet('E')">E</button>
+  <button onclick="checkAlphabet('F')">F</button><br>
+
+  <button onclick="checkAlphabet('G')">G</button>
+  <button onclick="checkAlphabet('H')">H</button>
+  <button onclick="checkAlphabet('I')">I</button>
+  <button onclick="checkAlphabet('J')">J</button>
+  <button onclick="checkAlphabet('K')">K</button>
+  <button onclick="checkAlphabet('L')">L</button><br>
+
+  <button onclick="checkAlphabet('M')">M</button>
+  <button onclick="checkAlphabet('N')">N</button>
+  <button onclick="checkAlphabet('O')">O</button>
+  <button onclick="checkAlphabet('P')">P</button>
+  <button onclick="checkAlphabet('Q')">Q</button>
+  <button onclick="checkAlphabet('R')">R</button><br>
+
+  <button onclick="checkAlphabet('S')">S</button>
+  <button onclick="checkAlphabet('T')">T</button>
+  <button onclick="checkAlphabet('U')">U</button>
+  <button onclick="checkAlphabet('V')">V</button>
+  <button onclick="checkAlphabet('W')">W</button>
+  <button onclick="checkAlphabet('X')">X</button><br>
+
+  <button onclick="checkAlphabet('Y')">Y</button>
+  <button onclick="checkAlphabet('Z')">Z</button>
+</p>
+
+<p style="text-align: center;">
+  <img src="https://t4.ftcdn.net/jpg/02/48/96/11/240_F_248961156_XeSISXFo6bcFUw830wpE2zPLxWGCl1u9.jpg" id="hangmanImage">
+</p>
+
+<script>
+var hangmanWords = ["JAVASCRIPT", "PYTHON", "HANGMAN", "COMPUTER", "PROGRAM", "LANGUAGE", "BROWSER"];
+var randomNumber = Math.floor(Math.random() * hangmanWords.length);
+var word = hangmanWords[randomNumber];
+var blanks = [];
+
+for (var i = 0; i < word.length; i++) {
+    blanks.push("_");
+}
+
+display()
+
+var numGuess = 7;
+
+function display() {
+    var str = "";
+    for (var i = 0; i < blanks.length; i++) {
+        str = str + blanks[i] + " ";
+    }
+    document.getElementById("emptyPara").innerText = str;
+}
+
+function checkAlphabet(letter) {
+    if (checkWinner() == true) {
+        return
+    } else {
+        if (numGuess > 0) {
+            var correct = false;
+            for (var i = 0; i < word.length; i++) {
+                if (word.charAt(i) == letter) {
+                    blanks[i] = letter
+                    correct = true
+                }
+            }
+            if (checkWinner() == true) {
+                alert("you win")
+            }
+            if (correct == false) {
+                numGuess = numGuess - 1;
+                displayImage()
+            }
+            display()
+        }
+    }
+}
+
+function checkWinner() {
+    for (var i = 0; i < blanks.length; i++) {
+        if (blanks[i] == "_") {
+            return false;
+        }
+    }
+    return true
+}
+
+function displayImage() {
+    if (checkWinner() == true) {
+        return
+    }
+
+    if (numGuess == 6) {
+        document.getElementById("hangmanImage").src = "h1.png";
+    }
+    else if (numGuess == 5) {
+        document.getElementById("hangmanImage").src = "h.2.png";
+    }
+    else if (numGuess == 4) {id        document.getElementById("hangmanImage").src = "h.3.png";
+    }
+    else if (numGuess == 3) {
+        document.getElementById("hangmanImage").src = "h.4.png";
+    }
+    else if (numGuess == 2) {
+        document.getElementById("hangmanImage").src = "h.5.png";
+    }
+    else if (numGuess == 1) {
+        document.getElementById("hangmanImage").src = "h.6.png";
+    }
+    else if (numGuess == 0) {
+        document.getElementById("hangmanImage").src = "h.7.png";
+        alert("You lose!")
+    }
+}
+</script>
+
+</body>
+</html>
