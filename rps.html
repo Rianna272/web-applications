@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock Paper Scissors</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+  }
+  h1 {
+    color: darkblue;
+  }
+  img {
+    width: 150px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  img:hover {
+    border-color: green;
+  }
+  #gameRound {
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  #player, #computer {
+    display: inline-block;
+    width: 40%;
+    font-weight: bold;
+    margin: 10px;
+  }
+  #player {
+    text-align: left;
+  }
+  #computer {
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+
+<h1>Rock Paper and Scissors</h1>
+
+<img src="https://scienceresourcebox.co.nz/cdn/shop/files/Chalkrounded_WEB.jpg?v=1684441843" onclick="rockClick()" alt="Rock">
+
+<img src="https://www.paperpapers.com/media/catalog/product/cache/26af58b6178898faa120837a4d31a0be/f/a/faviniart-drawingwht-811.jpg" onclick="paperClick()" alt="Paper">
+
+<img src="https://breeze-media.vega.co.in/media/catalog/product/cache/1ef41c8834aa6b772f4686b0f4051c34/1/h/1hh.webp" onclick="scissorClick()" alt="Scissors">
+
+<h2>Choose one option</h2>
+
+<p id="gameRound">Round: 1</p>
+
+<p id="player">Player Score = 0</p>
+<p id="computer">Computer Score = 0</p>
+
+<script>
+var round = 1
+var playerScore = 0
+var computerScore = 0
+
+function rockClick() {
+  var computer = Math.floor(Math.random() * 3) + 1
+  if (computer == 1) {
+    alert("Computer chose Rock. Tie!")
+  } else if (computer == 2) {
+    alert("Computer chose Paper. You Lose!")
+    computerScore += 1
+  } else {
+    alert("Computer chose Scissors. You Win!")
+    playerScore += 1
+  }
+  updateGame()
+}
+
+function paperClick() {
+  var computer = Math.floor(Math.random() * 3) + 1
+  if (computer == 1) {
+    alert("Computer chose Rock. You Win!")
+    playerScore += 1
+  } else if (computer == 2) {
+    alert("Computer chose Paper. Tie!")
+  } else {
+    alert("Computer chose Scissors. You Lose!")
+    computerScore += 1
+  }
+  updateGame()
+}
+
+function scissorClick() {
+  var computer = Math.floor(Math.random() * 3) + 1
+  if (computer == 1) {
+    alert("Computer chose Rock. You Lose!")
+    computerScore += 1
+  } else if (computer == 2) {
+    alert("Computer chose Paper. You Win!")
+    playerScore += 1
+  } else {
+    alert("Computer chose Scissors. Tie!")
+  }
+  updateGame()
+}
+
+function updateGame() {
+  round += 1
+  document.getElementById("gameRound").innerText = "Round: " + round
+  document.getElementById("player").innerText = "Player Score = " + playerScore
+  document.getElementById("computer").innerText = "Computer Score = " + computerScore
+
+  if (round > 5) {
+    if (playerScore > computerScore) {
+      alert("Game Over! You Win the Game!")
+    } else if (computerScore > playerScore) {
+      alert("Game Over! Computer Wins the Game!")
+    } else {
+      alert("Game Over! It's a Tie!")
+    }
+    round = 1
+    playerScore = 0
+    computerScore = 0
+    document.getElementById("gameRound").innerText = "Round: " + round
+    document.getElementById("player").innerText = "Player Score = " + playerScore
+    document.getElementById("computer").innerText = "Computer Score = " + computerScore
+  }
+}
+</script>
+
+</body>
+</html>
